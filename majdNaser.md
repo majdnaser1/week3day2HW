@@ -4,8 +4,9 @@ create  table countries(
     code int primary key,
     name varchar(10) unique,
     continent_name varchar(20) not null
-
 );
+
+
 create table users
 (
     id            int primary key,
@@ -17,8 +18,8 @@ create table users
     code_id       int,
     foreign key (code_id) references countries (code)
 
-
 );
+
 
 create table orders(
     id int primary key ,
@@ -26,8 +27,9 @@ create table orders(
     user_id  int,
     foreign key (user_id) references users(id),
     creates_at datetime
-
 );
+
+
 create table products (
     id int primary key ,
     name varchar(10) not null ,
@@ -45,6 +47,7 @@ create table order_product(
     foreign key (product_id) references products (id),
     quantity int default 0
 );
+
 insert into countries values (10123,'saudi','Asia');
 insert into users values (1094,'majdNaser','majd@gmail','f','1996','8-8-2022 22:20:22',10123);
 insert into orders values (111,1094,'start','11-8-2022 10:50:55');
